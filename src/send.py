@@ -3,6 +3,8 @@ import requests
 send = Blueprint('send', __name__, url_prefix="/send")
 from datetime import datetime
 
+from src.vectorstore import build_db
+
 @send.post('/chat')
 def send_chat():
     
@@ -17,9 +19,4 @@ def send_tab():
     tab_id = request.json['tab_id']
     content = request.json['content']
     
-
-    # Return a response
-    return ",".join([tab_id,content])
-
-
-    
+    build_db.store_faiss_db(tab_id=tab_id, content=content)
