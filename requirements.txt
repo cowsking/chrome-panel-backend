@@ -6,3 +6,7 @@ apscheduler
 openai
 datetime
 psycopg2-binary
+sentence_transformers
+langchain
+faiss-cpu
+bs4
