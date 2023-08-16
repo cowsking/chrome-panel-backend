@@ -12,7 +12,7 @@ def send_chat():
 
 
 @send.post('/tab')
-def send_chat():
+def send_tab():
     # Get the tab ID and content from the request parameters
     tab_id = request.json['tab_id']
     content = request.json['content']
